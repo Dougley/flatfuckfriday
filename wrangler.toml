@@ -1,7 +1,7 @@
-name = "discord-interactions"
+name = "fff-discord"
 type = "webpack"
 
-account_id = ""
+account_id = "412d13a687fef130f6ed2fd5ab46e10c"
 workers_dev = true
 route = ""
 zone_id = ""
