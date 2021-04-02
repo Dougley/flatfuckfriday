@@ -38,25 +38,27 @@ const flatfucks = [
   'https://b2.dougley.com/fff/vid2.mp4',
   'https://b2.dougley.com/fff/vid3.mp4',
   'https://b2.dougley.com/fff/img1.jpg',
-  'https://b2.dougley.com/fff/img2.jpg',
+  'https://b2.dougley.com/fff/img2.png',
   'https://b2.dougley.com/fff/img3.jpg',
   'https://b2.dougley.com/fff/img4.jpg',
   'https://twitter.com/Eflare/status/1362579805422559235',
-  '<:flatfuck1:759062458307575849><:flatfuck2:759062460446539796><:flatfuck3:759062458144522300>\n<:flatfuck4:759062457896403004><:flatfuck5:759062460253995019><:flatfuck6:759062457708052559>'
+  '<:flatfuck1:759062458307575849><:flatfuck2:759062460446539796><:flatfuck3:759062458144522300>\n<:flatfuck4:759062457896403004><:flatfuck5:759062460253995019><:flatfuck6:759062457708052559>',
 ]
 
 async function respondToInteraction(request) {
   if (request.type === 1) return new Response(JSON.stringify({ type: 1 }))
   else {
-    const today = (new Date()).getDay()
+    const today = new Date().getDay()
     switch (today) {
       case 4: {
-        return new Response(JSON.stringify({
-          type: 4,
-          data: {
-            content: 'https://b2.dougley.com/fff/tomorrow.jpg',
-          },
-        }))
+        return new Response(
+          JSON.stringify({
+            type: 4,
+            data: {
+              content: 'https://b2.dougley.com/fff/tomorrow.jpg',
+            },
+          }),
+        )
       }
       case 5: {
         return new Response(
@@ -64,9 +66,9 @@ async function respondToInteraction(request) {
             type: 4,
             data: {
               // content: 'https://b2.dougley.com/fff/vid1.mp4'
-              content: flatfucks[Math.floor(Math.random() * flatfucks.length)]
+              content: flatfucks[Math.floor(Math.random() * flatfucks.length)],
             },
-          })
+          }),
         )
       }
       default: {
@@ -74,9 +76,9 @@ async function respondToInteraction(request) {
           JSON.stringify({
             type: 4,
             data: {
-              content: 'You can only use this command on a friday'
+              content: 'You can only use this command on a friday',
             },
-          })
+          }),
         )
       }
     }
