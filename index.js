@@ -37,6 +37,7 @@ const flatfucks = [
   'https://b2.dougley.com/fff/vid1.mp4',
   'https://b2.dougley.com/fff/vid2.mp4',
   'https://b2.dougley.com/fff/vid3.mp4',
+  'https://cdn.discordapp.com/attachments/577263838483972117/829803295949324298/yiscwazwjyr61.mp4',
   'https://b2.dougley.com/fff/img1.jpg',
   'https://b2.dougley.com/fff/img2.png',
   'https://b2.dougley.com/fff/img3.jpg',
@@ -76,7 +77,7 @@ async function respondToInteraction(request) {
           JSON.stringify({
             type: 4,
             data: {
-              content: 'You can only use this command on a friday',
+              content: 'https://b2.dougley.com/fff/notyet.mp4',
             },
           }),
         )
