@@ -37,6 +37,7 @@ const flatfucks = [
   'https://b2.dougley.com/fff/vid1.mp4',
   'https://b2.dougley.com/fff/vid2.mp4',
   'https://b2.dougley.com/fff/vid3.mp4',
+  'https://b2.dougley.com/fff/vid4.mp4',
   'https://cdn.discordapp.com/attachments/577263838483972117/829803295949324298/yiscwazwjyr61.mp4',
   'https://b2.dougley.com/fff/img1.jpg',
   'https://b2.dougley.com/fff/img2.png',
@@ -58,7 +59,11 @@ async function respondToInteraction(request) {
             data: {
               content: 'https://b2.dougley.com/fff/tomorrow.jpg',
             },
-          }),
+          }), {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          }
         )
       }
       case 5: {
@@ -69,7 +74,11 @@ async function respondToInteraction(request) {
               // content: 'https://b2.dougley.com/fff/vid1.mp4'
               content: flatfucks[Math.floor(Math.random() * flatfucks.length)],
             },
-          }),
+          }), {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          }
         )
       }
       default: {
@@ -79,7 +88,11 @@ async function respondToInteraction(request) {
             data: {
               content: 'https://b2.dougley.com/fff/notyet.mp4',
             },
-          }),
+          }), {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          }
         )
       }
     }
