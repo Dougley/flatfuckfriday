@@ -48,53 +48,89 @@ const flatfucks = [
 ]
 
 async function respondToInteraction(request) {
-  if (request.type === 1) return new Response(JSON.stringify({ type: 1 }))
-  else {
-    const today = new Date().getDay()
-    switch (today) {
-      case 4: {
-        return new Response(
-          JSON.stringify({
-            type: 4,
-            data: {
-              content: 'https://b2.dougley.com/fff/tomorrow.jpg',
-            },
-          }), {
-            headers: {
-              'Content-Type': 'application/json'
+  switch (request.type) {
+    case 1: return new Response(JSON.stringify({ type: 1 }))
+    case 2: {
+      const today = new Date().getDay()
+      // const today = 5
+      switch (today) {
+        case 4: {
+          return new Response(
+            JSON.stringify({
+              type: 4,
+              data: {
+                content: 'https://b2.dougley.com/fff/tomorrow.jpg',
+              },
+            }), {
+              headers: {
+                'Content-Type': 'application/json'
+              }
             }
-          }
-        )
-      }
-      case 5: {
-        return new Response(
-          JSON.stringify({
-            type: 4,
-            data: {
-              // content: 'https://b2.dougley.com/fff/vid1.mp4'
-              content: flatfucks[Math.floor(Math.random() * flatfucks.length)],
-            },
-          }), {
-            headers: {
-              'Content-Type': 'application/json'
+          )
+        }
+        case 5: {
+          return new Response(
+            JSON.stringify({
+              type: 4,
+              data: {
+                // content: 'https://b2.dougley.com/fff/vid1.mp4'
+                content: flatfucks[Math.floor(Math.random() * flatfucks.length)],
+                components: [{
+                  type: 1,
+                  components: [{ 
+                    type: 2,
+                    label: "Reroll",
+                    style: 1,
+                    custom_id: "click_one"
+                   }]
+                }]
+              },
+            }), {
+              headers: {
+                'Content-Type': 'application/json'
+              }
             }
-          }
-        )
-      }
-      default: {
-        return new Response(
-          JSON.stringify({
-            type: 4,
-            data: {
-              content: 'https://b2.dougley.com/fff/notyet.mp4',
-            },
-          }), {
-            headers: {
-              'Content-Type': 'application/json'
+          )
+        }
+        default: {
+          return new Response(
+            JSON.stringify({
+              type: 4,
+              data: {
+                content: 'https://b2.dougley.com/fff/notyet.mp4',
+              },
+            }), {
+              headers: {
+                'Content-Type': 'application/json'
+              }
             }
+          )
+        }
+      }  
+    }
+    case 3: {
+      return new Response(
+        JSON.stringify({
+          type: 7,
+          data: {
+            // content: 'https://b2.dougley.com/fff/vid1.mp4'
+            content: flatfucks[Math.floor(Math.random() * flatfucks.length)],
+            components: [{
+              type: 1,
+              components: [{ 
+                type: 2,
+                label: "Reroll",
+                style: 1,
+                custom_id: "click_one"
+               }]
+            }]
+          },
+        }), {
+          headers: {
+            'Content-Type': 'application/json'
           }
-        )
-      }
+        }
+      )
     }
   }
 }
