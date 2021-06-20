@@ -44,6 +44,10 @@ const flatfucks = [
   'https://b2.dougley.com/fff/img3.jpg',
   'https://b2.dougley.com/fff/img4.jpg',
   'https://twitter.com/Eflare/status/1362579805422559235',
+  'https://twitter.com/krithgor/status/1251161012457205762',
+  'https://twitter.com/VSavron/status/1405924528593702918?s=20',
+  'https://twitter.com/Dewndeym/status/1246114373489381376?s=19',
+  'https://twitter.com/merzb0w/status/1243641348479053824?s=20',
   '<:flatfuck1:759062458307575849><:flatfuck2:759062460446539796><:flatfuck3:759062458144522300>\n<:flatfuck4:759062457896403004><:flatfuck5:759062460253995019><:flatfuck6:759062457708052559>',
 ]
 
