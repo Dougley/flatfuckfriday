@@ -97,7 +97,8 @@ async function respondToInteraction(request) {
             JSON.stringify({
               type: 4,
               data: {
-                content: 'https://b2.dougley.com/fff/notyet.mp4',
+                // content: 'https://b2.dougley.com/fff/notyet.mp4',
+                content: `It's not friday yet, next friday is <t:${(nextDay(5).getTime() / 1000).toFixed()}:R>`
               },
             }), {
               headers: {
@@ -133,4 +134,11 @@ async function respondToInteraction(request) {
       )
     }
   }
+}
+
+function nextDay(x) { // https://stackoverflow.com/a/1579109
+  var now = new Date();    
+  now.setDate(now.getDate() + (x+(7-now.getDay())) % 7);
+  now = new Date(now.toUTCString().substr(0, 16)) // lol, what works works
+  return now;
 }
