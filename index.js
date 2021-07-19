@@ -96,6 +96,20 @@ async function respondToInteraction(request) {
             }
           )
         }
+        case 7: {
+          return new Response(
+            JSON.stringify({
+              type: 4,
+              data: {
+                content: 'https://b2.dougley.com/fff/sunday.mp4'
+              },
+            }), {
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            }
+          )
+        }
         default: {
           return new Response(
             JSON.stringify({
