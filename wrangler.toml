@@ -1,9 +1,13 @@
-name = "fff-discord"
-type = "webpack"
+compatibility_date = "2021-11-12"
 
-account_id = "412d13a687fef130f6ed2fd5ab46e10c"
+name = "adjective-animal"
+main = "src/index.ts"
 workers_dev = true
-route = ""
-zone_id = ""
 
-webpack_config = "webpack.config.js"
+[vars]
+DISCORD_NACL_PUBLIC_KEY = "6287914aeafeeb18a0363471ada96e23e9ef53843657aa9346c98d98939371e3"
+DISCORD_APPLICATION_ID = "536984653483999232"
+
+[[rules]]
+type = "ESModule"
+globs = [ "**/*.ts" ]
